@@ -1,0 +1,61 @@
+{% extends 'grader/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Grading Result</h1>
+
+{% if sample_image_url %}
+<div class="sample-layout">
+    <!-- Left column: Sample sheet image -->
+    <div class="sample-image">
+        <h2>Sample Answer Sheet</h2>
+        <img src="{{ sample_image_url }}" alt="Sample Sheet" style="width:100%; border:1px solid #ddd; border-radius:4px;">
+    </div>
+
+    <!-- Right column: Grading details -->
+    <div class="sample-details">
+{% endif %}
+
+<div class="card">
+    <p><strong>Student:</strong> {{ submission.student_name }}</p>
+    <p><strong>Answer Key:</strong> {{ submission.answer_key.title }}</p>
+    <p><strong>Score:</strong> {{ submission.score }} / {{ total }}</p>
+</div>
+
+<div class="card">
+    <h2 style="margin-top:0;">Detailed Feedback</h2>
+    <table style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr style="border-bottom: 1px solid #e5e7eb; text-align: left;">
+                <th style="padding: 8px;">Question</th>
+                <th>Correct Answer</th>
+                <th>Your Answer</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in results %}
+            <tr style="border-bottom: 1px solid #f3f4f6;">
+                <td style="padding: 8px;">{{ r.question }}</td>
+                <td>{{ r.correct_answer }}</td>
+                <td>{{ r.your_answer }}</td>
+                <td>
+                    {% if r.correct %}
+                        <span style="color:green;">✓ Correct</span>
+                    {% else %}
+                        <span style="color:red;">✗ Incorrect</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% if sample_image_url %}
+    </div>
+</div>
+{% endif %}
+
+<p><a href="{% url 'home' %}" class="btn btn-outline">Grade Another Sheet</a></p>
+{% endblock %}

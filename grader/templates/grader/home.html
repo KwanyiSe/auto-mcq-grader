@@ -1,0 +1,50 @@
+{% extends 'grader/base.html' %}
+
+{% block content %}
+<h1>Automated MCQ Grading</h1>
+<div style="margin-bottom:20px;">
+    <a href="{% url 'sample_grade' %}" class="btn btn-outline">Try with Sample Sheet</a>
+</div>
+
+<div class="card">
+    <h2 style="margin-top:0;">Grade a New Sheet</h2>
+    <form method="post" action="{% url 'grade' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>
+            <label for="answer_key">Select Answer Key:</label>
+            <select name="answer_key" id="answer_key" required>
+                <option value="">-- Choose --</option>
+                {% for key in answer_keys %}
+                    <option value="{{ key.id }}">{{ key.title }}</option>
+                {% endfor %}
+            </select>
+            {% if not answer_keys %}
+                <span style="color:#999;">No keys yet – <a href="{% url 'create_key' %}">create one</a>.</span>
+            {% endif %}
+        </p>
+        <p>
+            <label for="student_name">Student Name:</label>
+            <input type="text" name="student_name" id="student_name" required>
+        </p>
+        <p>
+            <label for="image">Upload Answer Sheet (image):</label>
+            <input type="file" name="image" id="image" accept="image/*" required>
+        </p>
+        <button type="submit" class="btn">Grade</button>
+    </form>
+</div>
+
+{% if answer_keys %}
+<div class="card">
+    <h2>Available Answer Keys</h2>
+    <ul class="stream-list"> <!-- clean list style -->
+        {% for key in answer_keys %}
+            <li>
+                <span>{{ key.title }}</span>
+                <span style="color:#6b7280;">{{ key.answers|length }} questions</span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endblock %}
