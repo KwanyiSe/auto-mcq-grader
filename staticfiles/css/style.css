@@ -1,0 +1,347 @@
+/* ====== Global Reset ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f4f5f7;
+    color: #1a1a1a;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ====== Container ====== */
+.container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+/* ====== Navigation ====== */
+nav {
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+/* ====== Cards (global) ====== */
+.card {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* ====== Buttons ====== */
+button, .btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background: #1d4ed8;
+}
+
+.btn-danger {
+    background: #fff;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.btn-danger:hover {
+    background: #fef2f2;
+    border-color: #fca5a5;
+    color: #991b1b;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #2563eb;
+    border: 1px solid #2563eb;
+}
+.btn-outline:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+/* ====== Forms ====== */
+form p {
+    margin-bottom: 16px;
+}
+
+form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+form input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+}
+
+/* ====== Stream Header (room page) ====== */
+.stream-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.stream-header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+    color: #111;
+    font-weight: 600;
+}
+
+.stream-meta {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* ====== Video Section ====== */
+.video-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.video-section video {
+    width: 360px;
+    max-width: 100%;
+    height: auto;
+    background: #000;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 1px solid #e5e7eb;
+}
+
+.remote-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+/* ====== Chat Container ====== */
+.chat-container {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.chat-header {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1f2937;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.chat-log {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 12px;
+    height: 220px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;                /* space between messages */
+    align-items: flex-start; /* align bubbles to the left */
+}
+
+.chat-log p {
+    margin: 0;               /* gap is handled by the parent */
+    padding: 6px 12px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    display: inline-block;   /* bubble shrinks to content width */
+    max-width: 80%;
+    word-break: break-word;
+    font-size: 0.9rem;
+    color: #1f2937;
+}
+.chat-log p b {
+    font-weight: 600;
+    color: #111827;
+}
+
+.chat-input-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.chat-input-row input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.chat-input-row input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.1);
+}
+
+/* ====== Stream List ====== */
+.stream-list {
+    list-style: none;
+}
+
+.stream-list li {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    padding: 14px 20px;
+    border-radius: 6px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+
+.stream-list li:hover {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.stream-list li a {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.stream-list li span {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* ====== Alert ====== */
+.alert {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    padding: 12px 20px;
+    border-radius: 4px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 640px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .stream-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    .video-section video {
+        width: 100%;
+    }
+}
+
+/* Sample result layout: image + details side by side */
+.sample-layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.sample-image {
+    flex: 1;
+}
+
+.sample-image img {
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+}
+
+.sample-details {
+    flex: 1.5;
+}
+
+/* On small screens, stack vertically */
+@media (max-width: 700px) {
+    .sample-layout {
+        flex-direction: column;
+    }
+}
+.sample-image img {
+    width: 100%;
+    max-width: 400px;      /* limits image width */
+    height: auto;
+    display: block;
+    margin: 0 auto;        /* centers the image */
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+}

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}MCQ Grader{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% if request.GET.theme == 'dark' %}
+        <link rel="stylesheet" href="{% static 'css/dark-style.css' %}">
+    {% endif %}
 </head>
 <body>
     <div class="container">
@@ -13,7 +16,6 @@
             <a href="{% url 'home' %}">Home</a>
             <a href="{% url 'create_key' %}">New Answer Key</a>
         </nav>
-
         {% block content %}{% endblock %}
     </div>
 </body>

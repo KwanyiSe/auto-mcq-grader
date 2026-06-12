@@ -1,0 +1,127 @@
+/* ====== Alternate Theme – Academic Blue ====== */
+
+body {
+    background: linear-gradient(135deg, #e8f0fe 0%, #d4e4fc 100%);
+    color: #1e3a5f;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    background: #1e3a5f;
+    padding: 12px 30px;
+    border-radius: 0;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+nav a:hover {
+    background: #2c5282;
+}
+
+.card {
+    background: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+h1 {
+    color: #1e3a5f;
+    font-weight: 700;
+}
+
+button, .btn {
+    background: #2b6cb0;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #fff;
+    transition: background 0.2s;
+}
+
+button:hover, .btn:hover {
+    background: #2c5282;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #2b6cb0;
+    border: 2px solid #2b6cb0;
+}
+
+.btn-outline:hover {
+    background: #2b6cb0;
+    color: #fff;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form textarea,
+form select {
+    border: 2px solid #c3d9f7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    background: #f7faff;
+}
+
+form input:focus {
+    border-color: #2b6cb0;
+    box-shadow: 0 0 0 3px rgba(43,108,176,0.2);
+}
+
+.chat-section, #chatLog {
+    background: #f2f6fc;
+    border: 1px solid #c3d9f7;
+}
+
+#chatLog p {
+    background: #ffffff;
+    border: 1px solid #c3d9f7;
+}
+
+.stream-list li {
+    background: #ffffff;
+    border: 1px solid #c3d9f7;
+    border-radius: 8px;
+}
+
+.stream-list li:hover {
+    box-shadow: 0 4px 12px rgba(43,108,176,0.1);
+}
+
+.stream-list li a {
+    color: #1e3a5f;
+    font-weight: 700;
+}
+
+table thead th {
+    background: #e8f0fe;
+    color: #1e3a5f;
+    padding: 10px;
+}
+
+table tbody td {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.sample-image {
+    border: 1px solid #c3d9f7;
+    border-radius: 12px;
+    padding: 12px;
+    background: #fff;
+}

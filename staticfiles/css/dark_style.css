@@ -1,0 +1,79 @@
+/* ====== Dark Theme Override ====== */
+body {
+    background: #1a1a2e;
+    color: #e0e0e0;
+}
+
+nav {
+    background: #16213e;
+    border-bottom: 1px solid #0f3460;
+}
+
+nav a {
+    color: #a0a0a0;
+}
+nav a:hover {
+    color: #ffffff;
+}
+
+.card {
+    background: #0f3460;
+    border: 1px solid #1a1a3e;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+h1 {
+    color: #e94560;
+}
+
+button, .btn {
+    background: #e94560;
+    color: white;
+}
+button:hover, .btn:hover {
+    background: #c53030;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #e94560;
+    border: 1px solid #e94560;
+}
+.btn-outline:hover {
+    background: #e94560;
+    color: #fff;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form textarea,
+form select {
+    background: #1a1a2e;
+    border: 1px solid #0f3460;
+    color: #e0e0e0;
+}
+form input:focus {
+    border-color: #e94560;
+    box-shadow: 0 0 0 2px rgba(233,69,96,0.3);
+}
+
+.chat-section, #chatLog {
+    background: #0f3460;
+    border-color: #1a1a3e;
+}
+
+#chatLog p {
+    background: #1a1a2e;
+    border-color: #0f3460;
+    color: #ccc;
+}
+
+.stream-list li {
+    background: #0f3460;
+    border-color: #1a1a3e;
+}
+
+table th {
+    color: #e94560;
+}
